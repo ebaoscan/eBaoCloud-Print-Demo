@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "8440c6f2-9341-4d3f-a6cd-16d76d76c61a",
+		"name": "Document Generation Api Uat环境测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get Tickets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"yourusername\",\n\t\"password\":\"yourpassword\"\n}\n"
+				},
+				"url": {
+					"raw": "https://sit.ebaocloud.com/cas/ebao/v1/json/tickets",
+					"protocol": "https",
+					"host": [
+						"sit",
+						"ebaocloud",
+						"com"
+					],
+					"path": [
+						"cas",
+						"ebao",
+						"v1",
+						"json",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reporttemplates/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-ebao-tenant-id",
+						"value": "eBao"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer mWKFZ0W0QP2LH36e3rm0Wg"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "template",
+							"type": "file"
+						},
+						{
+							"key": "name",
+							"value": "eBaoCloudDemo2019_V3",
+							"type": "text"
+						},
+						{
+							"key": "catalog",
+							"value": "chentest",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "submit by direct upload",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sit.ebaocloud.com/api/zuul/eBao/1.0/reporttemplates/new",
+					"protocol": "https",
+					"host": [
+						"sit",
+						"ebaocloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"zuul",
+						"eBao",
+						"1.0",
+						"reporttemplates",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rendertasks/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer mWKFZ0W0QP2LH36e3rm0Wg"
+					},
+					{
+						"key": "x-ebao-tenant-id",
+						"value": "eBao"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"type": "file",
+							"src": "SR-PA-018-015.xml",
+							"value": ""
+						},
+						{
+							"key": "templateId",
+							"value": "f05d5f23-6d5d-4e69-a750-31141fa9128c",
+							"type": "text"
+						},
+						{
+							"key": "contentType",
+							"value": "json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "targetFileName",
+							"value": "eBaoTest.pdf",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "param",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "rendertype",
+							"value": "pdf",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sit.ebaocloud.com/api/zuul/eBao/1.0/rendertasks/new",
+					"protocol": "https",
+					"host": [
+						"sit",
+						"ebaocloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"zuul",
+						"eBao",
+						"1.0",
+						"rendertasks",
+						"new"
+					]
+				},
+				"description": "create new render task"
+			},
+			"response": []
+		},
+		{
+			"name": "rendertasks/new/json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer mWKFZ0W0QP2LH36e3rm0Wg"
+					},
+					{
+						"key": "x-ebao-tenant-id",
+						"value": "eBao"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"Info\":{\"channelName\":\"Test Channel\",\"premiumDetail\":[{\"feeType\":\"CHANNEL_COMMISSION\",\"amount\":0.7,\"source\":1},{\"feeType\":\"TPA_COMMISSION\",\"amount\":0.03,\"source\":1},{\"feeType\":\"SAFETY_LOADING\",\"amount\":1.27,\"source\":1},{\"feeType\":\"OVERHEADS_COSTS\",\"amount\":0.5,\"source\":1},{\"feeType\":\"DISTRIBUTOR_FEE\",\"amount\":2,\"source\":1},{\"feeType\":\"COST_OF_CAPITAL\",\"amount\":0.17,\"source\":1},{\"feeType\":\"ANP\",\"amount\":5.53,\"source\":1},{\"feeType\":\"PURE_PREMIUM\",\"amount\":1.15,\"source\":1},{\"feeType\":\"MOONSHOT_FEE\",\"amount\":4,\"source\":1},{\"feeType\":\"SGP\",\"amount\":5.53,\"source\":1},{\"feeType\":\"AGP\",\"amount\":5.53,\"source\":1},{\"feeType\":\"INSURER\",\"amount\":2.44,\"source\":1},{\"feeType\":\"SNP\",\"amount\":5.53,\"source\":1},{\"feeType\":\"CLAIM_HANDLING_COSTS\",\"amount\":0.5,\"source\":1},{\"feeType\":\"BROKER_COMMISSION\",\"amount\":0.35,\"source\":1},{\"feeType\":\"DISCOUNT\",\"amount\":0,\"source\":1},{\"feeType\":\"TAX\",\"amount\":0.5,\"source\":2},{\"feeType\":\"COMMISSION\",\"amount\":0,\"source\":3},{\"feeType\":\"APP\",\"amount\":6.03,\"source\":1}],\"channelId\":\"1\",\"premium\":6.03,\"insuredPeople\":[{\"channelId\":\"1\",\"id\":1042,\"uuid\":\"5be52290-305b-447e-a078-9f16d21faae9\",\"name\":\"Cathy Test\",\"idType\":6,\"idNumber\":\"PSNCTRA01nnel18000000001903Cathy Test\",\"category\":1,\"gender\":1,\"birthday\":\"1981-12-10T16:00:00.000Z\"},{\"channelId\":\"1\",\"id\":1043,\"uuid\":\"7778162e-1ea2-4753-b2f2-370589d9847d\",\"name\":\"Just\",\"idType\":6,\"idNumber\":\"PSNCTRA01nnel18000000001903Just\",\"category\":1,\"gender\":1,\"birthday\":\"1982-12-10T16:00:00.000Z\"}],\"planCode\":\"TD_DefaultPlan\",\"policyNumber\":\"PSNCTRA01nnel18000000001903\",\"effectiveDate\":\"2018-01-30\",\"policyHolder\":{\"channelId\":\"1\",\"id\":205,\"uuid\":\"df8039fd-0985-4c74-9f73-22ee89f7134d\",\"name\":\"Cathy\",\"idType\":6,\"idNumber\":\"cathy.li@ebaotech.com\",\"email\":\"cathy.li@ebaotech.com\",\"mobile\":\"13912345678\",\"category\":1,\"accounts\":[{\"uuid\":\"e44cd1ae-d78e-4369-86e7-a358154f1f72\",\"accountType\":2,\"holderName\":\"Holder\",\"accountNo\":\"12131\"},{\"uuid\":\"4301d9b4-546b-497a-ab3f-9c1e3ab1c2db\",\"accountType\":2,\"holderName\":\"Jean Franis Levi\",\"accountNo\":\"capken@gmail.com\"},{\"uuid\":\"242ca1de-7767-4238-b34a-d32272203807\",\"accountType\":2,\"holderName\":\"Cathy\",\"accountNo\":\"123456\"},{\"uuid\":\"1d6243f0-de64-4df0-b468-e68b910ec4ea\",\"accountType\":2,\"holderName\":\"Cathy\",\"accountNo\":\"10\"}],\"gender\":1},\"factorTable\":{\"TrainType\":\"TGV\",\"DepartureStation\":\"87319012\",\"ArrivalStation\":\"87686006\",\"DepartureTime\":\"2018-01-30T12:30:00.000Z\",\"ArrivalTime\":\"2018-01-30T16:00:00.000Z\",\"PurQuantity\":\"1\",\"PlanCode\":\"TD_DefaultPlan\",\"ChannelType\":\"TestChannel\",\"PL009\":\"NO_FREE_INSURANCE\",\"effectiveDate\":\"2018-01-30T12:30:00.000Z\",\"expiredDate\":\"2018-01-30T16:30:01.000Z\",\"PH001\":\"Cathy\",\"PHSurname\":\"Test\",\"PH013\":\"13912345678\",\"PH002\":\"1\",\"PH015\":\"cathy.li@ebaotech.com\",\"ISPFirstName\":\"Cathy\",\"ISP001\":\"Cathy\",\"ISPSurname\":\"Test\",\"ISP002\":\"1\",\"ISP003\":\"1981-12-10T16:00:00.000Z\",\"TypeOfBooking\":\"01\",\"JourneyPrice\":50,\"language\":\"en\",\"si_TD_DD\":true,\"si_TD_AD\":true,\"total_insured_persons\":2,\"ruleScope\":\"\",\"COMMISSION_NIB_RATE_FACTOR\":0},\"productName\":\"Train Delay for SNCF v01\",\"InsuredFactor\":[{\"ISPFirstName\":\"Cathy\",\"ISP001\":\"Cathy\",\"ISPSurname\":\"Test\",\"ISP002\":\"1\",\"ISP003\":\"1981-12-10T16:00:00.000Z\"},{\"ISPFirstName\":\"Justin\",\"ISP001\":\"Just\",\"ISPSurname\":\"Test\",\"ISP002\":\"1\",\"ISP003\":\"1982-12-10T16:00:00.000Z\"}],\"productId\":\"uEGPlcQncL:1\"}},\r\n\"templateId\":\"f05d5f23-6d5d-4e69-a750-31141fa9128c\",\r\n\"contentType\":\"json\",\r\n\"targetFileName\":\"eBaoTest.pdf\",\r\n\"param\":{\"PrintDate\": \"2019-01-03\"},\r\n\"rendertype\":\"pdf\",\r\n\"password\":\"123456\"}"
+				},
+				"url": {
+					"raw": "https://sit.ebaocloud.com/api/zuul/eBao/1.0/rendertasks/new/json",
+					"protocol": "https",
+					"host": [
+						"sit",
+						"ebaocloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"zuul",
+						"eBao",
+						"1.0",
+						"rendertasks",
+						"new",
+						"json"
+					]
+				},
+				"description": "create new render task"
+			},
+			"response": []
+		},
+		{
+			"name": "content",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-ebao-tenant-id",
+						"value": "eBao"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer mWKFZ0W0QP2LH36e3rm0Wg"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://sit.ebaocloud.com/api/zuul/eBao/1.0/rendertasks/0ad201ad-66e6-4f59-81af-1e2791d2972f/result",
+					"protocol": "https",
+					"host": [
+						"sit",
+						"ebaocloud",
+						"com"
+					],
+					"path": [
+						"api",
+						"zuul",
+						"eBao",
+						"1.0",
+						"rendertasks",
+						"0ad201ad-66e6-4f59-81af-1e2791d2972f",
+						"result"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
